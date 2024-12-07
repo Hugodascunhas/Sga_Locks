@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar-se</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4">Registrar-se</h2>
+                <% if (query.error==='rm_exists' ) { %>
+                    <div class="alert alert-danger">
+                        O RM informado já está cadastrado.
+                    </div>
+                    <% } %>
+                        <form action="/register" method="POST"> 
+                            <div class="mb-3">
+                                <label for="Nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="Nome" name="Nome" required>
+                            </div>
+                              <div class="mb-3">
+                                <label for="Sobrenome" class="form-label">Sobrenome</label>
+                                <input type="text" class="form-control" id="Sobrenome" name="Sobrenome" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rm" class="form-label">RM</label>
+                                <input type="number" class="form-control" id="rm" name="rm" required>
+                            </div> 
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="etec" class="form-label">ETEC</label>
+                                <select class="form-select" id="etec" name="etec" required>
+                                    <option value="" disabled selected>Selecione sua ETEC</option>
+                                    <option value="043">Etec Bento Quirino - Campinas</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="curso" class="form-label">Curso</label>
+                                <select class="form-select" id="curso" name="curso" required>
+                                    <option value="" disabled selected>Selecione seu curso</option>
+                                    <option value="1">Ensino Médio Integrado Com Técnico em Administração - (M-Tec - N)</option>
+                                    <option value="2">Ensino Médio Integrado Com Técnico em Administração - (M-tec - PI)</option>
+                                    <option value="3">Ensino Médio Integrado Com Técnico em Desenvolvimento de Sistemas - (M-Tec - N)</option>
+                                    <option value="4">Ensino Médio Integrado Com Técnico em Desenvolvimento de Sistemas - (M-Tec)</option>
+                                    <option value="5">Ensino Médio Integrado Com Técnico em Desenvolvimento de Sistemas - (M-Tec/AMS)</option>
+                                    <option value="6">Ensino Médio Integrado Com Técnico em Eletrônica - (M-tec - PI)</option>
+                                    <option value="7">Ensino Médio Integrado Com Técnico em Eletrotécnica - (M-Tec)</option>
+                                    <option value="8">Ensino Médio Integrado Com Técnico em Logística - (M-tec - PI)</option>
+                                    <option value="9">Ensino Médio Integrado Com Técnico em Mecânica - (M-tec - PI)</option>
+                                    <option value="10">Técnico Modular em Eletrônica</option>
+                                    <option value="11">Técnico Modular em Eletrotécnica</option>
+                                    <option value="12">Técnico Modular em Administração</option>
+                                    <option value="13">Técnico Modular em Comércio</option>
+                                    <option value="14">Técnico Modular em Desenvolvimento de Sistemas</option>
+                                    <option value="15">Técnico Modular em Mecânica</option>
+
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Registrar</button>
+                            <div class="text-center mt-3">
+                                <a href="/login">Já tem uma conta? Entre aqui</a>
+                            </div>
+                        </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

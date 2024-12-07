@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redefinir Senha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    form {
+      display: inline-block;
+      text-align: left;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Redefinir Senha</h1>
+  <p style="color: red;">Erro: <%= error %></p>
+  <form action="/reset-password/<%= token %>" method="POST">
+    <input type="password" name="password" placeholder="Nova Senha" required>
+    <input type="password" name="confirmPassword" placeholder="Confirmar Nova Senha" required>
+    <button type="submit">Redefinir Senha</button>
+  </form>
+</body>
+</html>

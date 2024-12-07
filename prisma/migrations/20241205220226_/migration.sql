@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `user` ALTER COLUMN `etec` DROP DEFAULT,
+    ALTER COLUMN `curso` DROP DEFAULT;
